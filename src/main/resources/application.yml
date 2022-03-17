@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:mysql://171.34.166.137:3306/vimo-cms?serverTimezone=GMT%2B8
+    username: ce
+    password: Vimo@2020
+  mvc:
+    format:
+      date: yyyy-MM-dd
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: GMT+8
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml  #mapper映射文件
+  type-aliases-package: com.vimo.vimodemo01.domain
+#  config-location:  #指定核心配置文件
+server:
+  port: 8092
+  servlet:
+    session:
+      timeout: 500m
+jackson:
+  #JsonInclude.Include.ALWAYS              默认
+  #JsonInclude.Include.NON_DEFAULT     属性为默认值不序列化
+  #JsonInclude.Include.NON_EMPTY         属性为 空（””） 或者为 NULL 都不序列化
+  #JsonInclude.Include.NON_NULL           属性为NULL   不序列化
+  default-property-inclusion: ALWAYS # 默认
+  date-format: yyyy-MM-dd HH:mm:ss   # 时间格式
+  time-zone: GMT+8
